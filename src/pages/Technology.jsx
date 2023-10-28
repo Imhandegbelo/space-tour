@@ -1,49 +1,81 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import vehicle from "../assets/images/technology/image-launch-vehicle-portrait.jpg";
+import vehicle_portrait from "../assets/images/technology/image-launch-vehicle-portrait.jpg";
+import vehicle_landscape from "../assets/images/technology/image-launch-vehicle-landscape.jpg";
+import capsule_portrait from "../assets/images/technology/image-space-capsule-portrait.jpg";
+import capsule_landscape from "../assets/images/technology/image-space-capsule-landscape.jpg";
+import port_landscape from "../assets/images/technology/image-spaceport-landscape.jpg";
+import port_portrait from "../assets/images/technology/image-spaceport-portrait.jpg";
+import data from "../data/data.json";
 
 export default function Technology() {
+  const [active, setActive] = useState(0);
+
+  const image = [
+    {
+      portrait: vehicle_portrait,
+      landscape: vehicle_landscape,
+      alt: "space vehicle",
+    },
+    {
+      portrait: port_portrait,
+      landscape: port_landscape,
+      alt: "space port photo",
+    },
+    {
+      portrait: capsule_portrait,
+      landscape: capsule_landscape,
+      alt: "space capsule",
+    },
+  ];
+
   return (
-    <div className="pt-6 md:pt-10 h-screen w-screen bg-technology-mobile md:bg-technology-tablet lg:bg-technology-desktop bg-cover bg-no-repeat overflow-x-clip">
+    <div className="pt-6 md:pt-10 lg:h-screen w-screen bg-technology-mobile md:bg-technology-tablet lg:bg-technology-desktop bg-cover bg-no-repeat overflow-x-clip">
       <Navbar />
-      <div className="pl-36 max-w-[1440px]">
-        <h1 className="text-white text-[1.75rem] font-Barlow+Condensed mt-36">
+      <div className="lg:pl-36 max-w-[1440px]">
+        <h1 className="text-white text-[1.75rem] font-Barlow+Condensed my-10 ml-8 lg:my-0 lg:ml-0 lg:mt-36">
           <span className="opacity-30 mr-3">03</span>SPACE LAUNCH 101
         </h1>
-        <div className="flex text-white gap-36">
-          <div className="flex items-center w-3/5">
-            <div className="flex gap-12">
-              <div className="flex flex-col justify-around font-Bellefair">
-                <div className="flex items-center justify-center w-20 h-20 rounded-full border border-white bg-white text-black ">
-                  <p className="text-[1.9rem]">1</p>
-                </div>
-                <div className="flex items-center justify-center w-20 h-20 rounded-full border border-white bg-white text-black">
-                  <p className="text-[1.9rem]">2</p>
-                </div>
-                <div className="flex items-center justify-center w-20 h-20 rounded-full border border-white bg-white text-black">
-                  <p className="text-[1.9rem]">3</p>
-                </div>
+        <div className="lg:hidden">
+          <img
+            src={image[active].landscape}
+            alt="space launch vehicle"
+            className="align-right w-full"
+          />
+        </div>
+        <div className="flex flex-col lg:flex-row text-white justify-between">
+          <div className="flex items-center lg:w-3/5">
+            <div className="flex flex-col  w-full text-center lg:text-left lg:flex-row gap-12">
+              <div className="flex lg:flex-col mt-8 lg:mt-0 justify-center gap-2 lg:justify-around font-Bellefair">
+                {[1, 2, 3].map((btn, index) => (
+                  <button
+                    onClick={() => setActive(index)}
+                    className={`flex items-center justify-center w-10 h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full ${
+                      active == index ? "bg-white text-black" : "text-white"
+                    } border border-white text-base md:text-[1.9rem]`}
+                  >
+                    {btn}
+                  </button>
+                ))}
               </div>
-              <div className="text-gray-300">
-                <h2 className="text-base font-Barlow+Condensed tracking-[2.7px]">
+              <div className="grid gap-8 text-gray-300 h-[18.75rem] px-8 lg:px-0">
+                <h2 className="text-sm md:text-base font-Barlow+Condensed tracking-[2.7px]">
                   THE TERMINOLOGY ...
                 </h2>
-                <h3 className="text-white font-Bellefair text-[3.5rem]">LAUNCH VEHICLE</h3>
-                <p className="text-lg opacity-60 font-Barlow leading-[2rem] w-[30rem]">
-                  A launch vehicle or carrier rocket is a rocket-propelled
-                  vehicle used to carry a payload from Earth's surface to space,
-                  usually to Earth orbit or beyond. Our WEB-X carrier rocket is
-                  the most powerful in operation. Standing 150 metres tall, it's
-                  quite an awe-inspiring sight on the launch pad!
+                <h3 className="text-white font-Bellefair text-2xl md:text-[2.5rem] lg:text-[3.4rem] uppercase">
+                  {data.technology[active].name}
+                </h3>
+                <p className="text-[15px] text-center lg:text-left md:text-base lg:text-lg opacity-60 font-Barlow md:leading-[1.5rem] lg:leading-[2rem] shrink max-w-[29rem] mx-auto">
+                  {data.technology[active].description}
                 </p>
               </div>
             </div>
           </div>
-          <div className="w-2/5">
+          <div className="hidden lg:block w-2/5">
             <img
-              src={vehicle}
+              src={image[active].portrait}
               alt="space launch vehicle"
-              className="align-right"
+              className="-pr-2"
             />
           </div>
         </div>

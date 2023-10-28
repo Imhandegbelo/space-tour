@@ -14,9 +14,9 @@ export default function Navbar() {
     { name: "TECHNOLOGY", path: "/technology" },
   ];
   return (
-    <nav className="flex w-full justify-between items-center lg:pt-14 md:text-sm lg:text-base text-white z-10 md:pl-10 lg:-pr-6 md:h-20 h-24">
+    <nav className="flex w-full justify-between items-center lg:pt-14 md:text-sm lg:text-base text-white z-10 pl-6 md:pl-8 lg:-pr-6 md:h-20 h-24">
       <Link to="/">
-        <img src={logo} alt="logo" className="ml-6" />
+        <img src={logo} alt="logo" className="lg:ml-6" />
       </Link>
       <div className="hidden md:flex items-center justify-between md:w-7/12 md:px-6 md:-mr-2 lg:px-20 lg:gap-12 bg-opacity-20 rounded-lg backdrop-blur-lg bg-gray-200">
         {links.map((link, index) => (

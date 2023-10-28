@@ -7,7 +7,7 @@ import europa from "../assets/images/destination/image-europa.png"
 import data from "../data/data.json"
 
 export default function Destination() {
-  console.log(data.destinations)
+
   return (
     <div className="flex justify-center h-screen w-screen bg-destination-mobile md:bg-destination-tablet lg:bg-destination-desktop bg-cover bg-no-repeat overflow-x-clip">
       <div className="h-screen">
