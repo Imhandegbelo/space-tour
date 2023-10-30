@@ -33,7 +33,7 @@ export default function Technology() {
     <div className="pt-6 md:pt-10 h-screen w-screen bg-technology-mobile md:bg-technology-tablet lg:bg-technology-desktop bg-cover bg-no-repeat overflow-clip">
       <Navbar />
       <div className="lg:pl-36 max-w-[1440px]">
-        <h1 className="text-white text-base md:text-[1.75rem] text-center md:text-left font-Barlow+Condensed my-10 md:ml-8 lg:my-0 lg:ml-0 lg:mt-36">
+        <h1 className="text-white text-base md:text-[1.75rem] text-center md:text-left font-Barlow+Condensed my-10 md:ml-8 lg:mmy-0 lg:ml-0 lg:mt-36">
           <span className="opacity-30 mr-3">03</span>SPACE LAUNCH 101
         </h1>
         <div className="lg:hidden">

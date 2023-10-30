@@ -18,7 +18,7 @@ export default function Navbar() {
       <Link to="/">
         <img src={logo} alt="logo" className="lg:ml-6" />
       </Link>
-      <div className="hidden md:flex items-center justify-between md:w-7/12 md:px-6 md:-mr-2 lg:px-20 lg:gap-12 bg-opacity-20 rounded-lg backdrop-blur-lg bg-gray-200">
+      <div className="hidden md:flex items-center justify-between md:w-7/12 md:px-6 md:-mr-2 lg:px-20 lg:gap-12 bg-opacity-5 rounded-lg backdrop-blur-lg bg-stone-100">
         {links.map((link, index) => (
           <Link
             key={link.path}
