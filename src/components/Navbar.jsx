@@ -23,7 +23,7 @@ export default function Navbar() {
           <Link
             key={link.path}
             to={link.path}
-            className={`border-b-4 ${location == link.path? "border-white":"border-transparent"} hover:border-white md:py-6 lg:py-10`}
+            className={`border-b-4 ${location == link.path? "border-white":"border-transparent"} hover:border-white/50 md:py-6 lg:py-10`}
           >
             <span className="hidden lg:inline font-bold mr-3">0{index}</span>
             {link.name}
@@ -32,7 +32,7 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="flex flex-col h-screen w-2/3 absolute top-0 right-0 bg-opacity-20 rounded-l-lg backdrop-blur-xl bg-stone-400 p-6">
+        <div className="flex flex-col h-screen w-2/3 absolute top-0 right-0 bg-opacity-20 rounded-l-lg backdrop-blur-xl bg-stone-400 z-10 p-6">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden mr-6 mb-24"

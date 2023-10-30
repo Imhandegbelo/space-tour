@@ -8,7 +8,7 @@ export default function Home() {
         <Navbar />
         <div className="mt-6 md:mt-10 lg:mt-40 lg:pt-32 flex flex-col gap-20 lg:flex-row items-center justify-between max-w-[1440px] px-6 md:px-24">
           <div className="flex flex-col 2gap-6 text-center lg:text-left font-Barlow+Condensed text-gray-400 w-full lg:w-[38%]">
-            <h1 className="text-base md:text-xl lg:text-[1.5rem] tracking-[4px]">
+            <h1 className="text-base md:text-xl lg:text-[1.5rem] tracking-[2.7px] md:tracking-[4px]">
               SO, YOU WANT TO TRAVEL TO
             </h1>
             <h2 className="font-Bellefair text-white text-[5rem] md:text-[150px]">

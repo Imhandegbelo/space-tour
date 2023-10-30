@@ -30,10 +30,10 @@ export default function Technology() {
   ];
 
   return (
-    <div className="pt-6 md:pt-10 lg:h-screen w-screen bg-technology-mobile md:bg-technology-tablet lg:bg-technology-desktop bg-cover bg-no-repeat overflow-x-clip">
+    <div className="pt-6 md:pt-10 h-screen w-screen bg-technology-mobile md:bg-technology-tablet lg:bg-technology-desktop bg-cover bg-no-repeat overflow-clip">
       <Navbar />
       <div className="lg:pl-36 max-w-[1440px]">
-        <h1 className="text-white text-[1.75rem] font-Barlow+Condensed my-10 ml-8 lg:my-0 lg:ml-0 lg:mt-36">
+        <h1 className="text-white text-base md:text-[1.75rem] text-center md:text-left font-Barlow+Condensed my-10 md:ml-8 lg:my-0 lg:ml-0 lg:mt-36">
           <span className="opacity-30 mr-3">03</span>SPACE LAUNCH 101
         </h1>
         <div className="lg:hidden">
@@ -49,20 +49,21 @@ export default function Technology() {
               <div className="flex lg:flex-col mt-8 lg:mt-0 justify-center gap-2 lg:justify-around font-Bellefair">
                 {[1, 2, 3].map((btn, index) => (
                   <button
+                    key={btn.toString()}
                     onClick={() => setActive(index)}
                     className={`flex items-center justify-center w-10 h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full ${
                       active == index ? "bg-white text-black" : "text-white"
-                    } border border-white text-base md:text-[1.9rem]`}
+                    } border border-white/50 hover:border-white text-base md:text-[1.9rem]`}
                   >
                     {btn}
                   </button>
                 ))}
               </div>
-              <div className="grid gap-8 text-gray-300 h-[18.75rem] px-8 lg:px-0">
-                <h2 className="text-sm md:text-base font-Barlow+Condensed tracking-[2.7px]">
+              <div className="grid md:gap-8 text-gray-300 h-[1v8.75rem] px-8 lg:px-0">
+                <h2 className="text-sm  md:text-base font-Barlow+Condensed tracking-[2.7px]">
                   THE TERMINOLOGY ...
                 </h2>
-                <h3 className="text-white font-Bellefair text-2xl md:text-[2.5rem] lg:text-[3.4rem] uppercase">
+                <h3 className="text-white font-Bellefair text-2xl md:text-[2.5rem] lg:text-[3.4rem] uppercase leading-[3rem]">
                   {data.technology[active].name}
                 </h3>
                 <p className="text-[15px] text-center lg:text-left md:text-base lg:text-lg opacity-60 font-Barlow md:leading-[1.5rem] lg:leading-[2rem] shrink max-w-[29rem] mx-auto">

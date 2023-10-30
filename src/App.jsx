@@ -3,8 +3,8 @@ import Home from "./pages/Home";
 import Destination from "./pages/Destination";
 import Crew from "./pages/Crew";
 import Technology from "./pages/Technology";
-import Error from "./pages/Error";
 import Navbar from "./components/Navbar";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path="/destination" element={<Destination />} />
           <Route path="/crew" element={<Crew />} />
           <Route path="/technology" element={<Technology />} />
-          <Route path="/*" element={<Error />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </main>
     </>
