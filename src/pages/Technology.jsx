@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import vehicle_portrait from "../assets/images/technology/image-launch-vehicle-portrait.jpg";
 import vehicle_landscape from "../assets/images/technology/image-launch-vehicle-landscape.jpg";
@@ -29,10 +29,18 @@ export default function Technology() {
     },
   ];
 
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      const array_length = data.technology.length;
+      setActive((active) => (active + 1) % array_length);
+    }, 10000);
+    return () => clearTimeout(timeOut);
+  }, [active]);
+
   return (
     <div className="pt-6 md:pt-10 h-screen w-screen bg-technology-mobile md:bg-technology-tablet lg:bg-technology-desktop bg-cover bg-no-repeat overflow-clip">
       <Navbar />
-      <div className="lg:pl-36 max-w-[1440px]">
+      <div className="lg:pl-24 xl:pl-36 max-w-[1440px] mx-auto">
         <h1 className="text-white text-base md:text-[1.75rem] text-center md:text-left font-Barlow+Condensed my-10 md:ml-8 lg:mmy-0 lg:ml-0 lg:mt-36">
           <span className="opacity-30 mr-3">03</span>SPACE LAUNCH 101
         </h1>
@@ -43,7 +51,7 @@ export default function Technology() {
             className="align-right w-full"
           />
         </div>
-        <div className="flex flex-col lg:flex-row text-white justify-between">
+        <div className="flex flex-col lg:flex-row gap-4 text-white xl:justify-between">
           <div className="flex items-center lg:w-3/5">
             <div className="flex flex-col  w-full text-center lg:text-left lg:flex-row gap-12">
               <div className="flex lg:flex-col mt-8 lg:mt-0 justify-center gap-2 lg:justify-around font-Bellefair">
@@ -60,7 +68,7 @@ export default function Technology() {
                 ))}
               </div>
               <div className="grid md:gap-8 text-gray-300 h-[1v8.75rem] px-8 lg:px-0">
-                <h2 className="text-sm  md:text-base font-Barlow+Condensed tracking-[2.7px]">
+                <h2 className="text-sm md:text-base lg:text-2xl font-Barlow+Condensed tracking-[2.7px]">
                   THE TERMINOLOGY ...
                 </h2>
                 <h3 className="text-white font-Bellefair text-2xl md:text-[2.5rem] lg:text-[3.4rem] uppercase leading-[3rem]">

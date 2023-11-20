@@ -15,11 +15,11 @@ export default function Navbar() {
     { name: "TECHNOLOGY", path: "/technology" },
   ];
   return (
-    <nav className="flex w-full justify-between items-center lg:pt-14 md:text-sm lg:text-base text-white z-10 pl-6 md:pl-8 lg:-pr-6 md:h-20 h-24">
+    <nav className="flex w-full justify-between items-center lg:pt-14 md:text-sm xl:text-base text-white z-10 pl-6 md:pl-8 md:h-20 h-24">
       <Link to="/">
         <img src={logo} alt="logo" className="lg:ml-6" />
       </Link>
-      <div className="hidden md:flex items-center justify-between md:w-7/12 md:px-6 md:-mr-2 lg:px-20 lg:gap-12 bg-opacity-5 rounded-lg backdrop-blur-lg bg-stone-100">
+      <div className="hidden md:flex items-center justify-between md:w-7/12 2xl:w-1/2 md:px-6 lg:px-16 xl:px-20 lg:gap-11 xl:gap-12 bg-opacity-5 rounded-l-lg backdrop-blur-lg bg-stone-100">
         {links.map((link, index) => (
           <Link
             key={link.path}
@@ -35,12 +35,12 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="menu flex flex-col h-screen w-2/3 absolute top-0 right-0 bg-opacity-20 rounded-l-lg backdrop-blur-xl bg-stone-400 z-10 p-6">
+        <div className="menu flex flex-col h-screen w-2/3 absolute top-0 right-0 bg-opacity-20 backdrop-blur-xl bg-stone-400 z-10 p-6">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden mr-6 mb-36"
           >
-            <img src={close} alt="" className="w-10 absolute right-6 top-14" />
+            <img src={close} alt="" className="w-10 absolute right-6 top-12" />
           </button>
           {links.map((link, index) => (
             <Link key={link.path} to={link.path} className="py-2">
